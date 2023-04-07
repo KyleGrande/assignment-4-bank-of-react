@@ -50,6 +50,14 @@ class App extends Component {
 
   }
 
+  addCredit = (credit) => {
+    const newCredits = [...this.state.creditList, credit];
+    this.setState({
+      creditList: newCredits,
+      accountBalance: this.state.accountBalance + Number(credit.amount)
+    });
+  }
+
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
@@ -65,7 +73,11 @@ class App extends Component {
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
     )
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<Credits credits={this.state.creditList} />) 
+
+    const CreditsComponent = () => (
+      <Credits credits={this.state.creditList} addCredit={this.addCredit} accountBalance={this.state.accountBalance} />
+    )
+
     const DebitsComponent = () => (<Debits debits={this.state.debitList} />) 
 
     // Important: Include the "basename" in Router, which is needed for deploying the React app to GitHub Pages
