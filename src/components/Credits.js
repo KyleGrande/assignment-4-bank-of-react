@@ -57,27 +57,32 @@ class Credits extends Component {
               HOME
             </Link>
           </div>
-          <div className='credits-header-center'>
+          <div className='credits-header-right'>
               Credits
-          </div>
-          <div className="credits-header-right">
-            <AccountBalance accountBalance={this.props.accountBalance} />
           </div>
         </div>
         <div className="credit-content">
+        <div className='credit-content-left'>
         <ul className="credit-list">{creditsView()}</ul>
+        </div>
+        <div className='credit-content-right'>
+
         <form onSubmit={this.handleSubmit} className="credit-form">
-          <div className="form-row">
+        <div className='account-balance'>
+        <AccountBalance accountBalance={this.props.accountBalance} />
+        </div>
+          <div className="form-row"> 
             <label htmlFor="description" className="form-label">Description</label>
             <input type="text" name="description" id="description" value={this.state.description} onChange={this.handleChange} className="form-input" />
           </div>
           <div className="form-row">
             <label htmlFor="amount" className="form-label">Amount</label>
-            <input type="number" name="amount" id="amount" value={this.state.amount} onChange={this.handleChange} className="form-input" />
+            <input type="number" name="amount" id="amount" value={this.state.amount} onChange={this.handleChange} className="form-input"  />
           </div>
           <button type="submit" className="form-button">Add Credit</button>
         </form>       
         </div>
+      </div>
       </div>
     );
   }

@@ -57,17 +57,21 @@ class Debits extends Component {
               HOME
             </Link>
           </div>
-          <div className='debits-header-center'>
+          <div className='debits-header-right'>
               Debits
-          </div>
-          <div className="debits-header-right">
-            <AccountBalance accountBalance={this.props.accountBalance} />
           </div>
         </div>
         <div className="debit-content">
+        <div className='debit-content-left'>
         <ul className="debit-list">{debitsView()}</ul>
+        </div>
+        <div className='debit-content-right'>
+
         <form onSubmit={this.handleSubmit} className="debit-form">
-          <div className="form-row">
+        <div className='account-balance'>
+        <AccountBalance accountBalance={this.props.accountBalance} />
+        </div>
+          <div className="form-row"> 
             <label htmlFor="description" className="form-label">Description</label>
             <input type="text" name="description" id="description" value={this.state.description} onChange={this.handleChange} className="form-input" />
           </div>
@@ -78,6 +82,7 @@ class Debits extends Component {
           <button type="submit" className="form-button">Add Debit</button>
         </form>       
         </div>
+      </div>
       </div>
     );
   }
