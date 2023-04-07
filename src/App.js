@@ -28,6 +28,28 @@ class App extends Component {
     };
   }
 
+  async componentDidMount() {  // Fetch data from API
+    let credits = await (await fetch('https://johnnylaicode.github.io/api/credits.json')).json();
+    let debits = await (await fetch('https://johnnylaicode.github.io/api/debits.json')).json();
+
+
+    this.setState({creditList: credits, debitList: debits});     //creditList and debitList get from api
+   
+    let totalCredits = 0;  //initalize account balance
+    let totalDebits = 0;  
+    credits.forEach(credit => {  //set credit and debit
+      totalCredits += credit.amount;
+    }
+    );
+    debits.forEach(debit => {
+      totalDebits += debit.amount;
+    }
+    );
+    //calculate account balance
+    this.setState({accountBalance: totalCredits - totalDebits});
+
+  }
+
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
