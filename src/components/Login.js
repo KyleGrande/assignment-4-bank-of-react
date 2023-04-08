@@ -6,7 +6,7 @@ Note: You don't need to work on this file for the Assignment.
 ==================================================*/
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import './Login.css';
 
 class LogIn extends Component {
   constructor (props) {  // Create and initialize state
@@ -43,22 +43,19 @@ class LogIn extends Component {
 
     // Render the login form (and call "handleSubmit" method when "Log In" button is clicked to submit form)
     return (
-      <div>
+      <div className='login'>
+
+        <form onSubmit={this.handleSubmit} className='login-form'>
         <h1>Login</h1>
-        
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label>User Name</label>
-            <input type="text" name="userName" defaultValue={this.props.user.userName} onChange={this.handleChange} />
+
+        <div className='login-form-row'>
+            <label className='login-form-label'>User Name</label>
+            <input type="text" name="userName" defaultValue={this.props.user.userName} onChange={this.handleChange} className='login-form-input' />
+            <label className='login-form-label'>Password</label>
+            <input type="password" name="password" className='login-form-input' />
+          <button className='login-form-button'>Log In</button>
           </div>
-          <div>
-            <label>Password</label>
-            <input type="password" name="password" />
-          </div>
-          <button>Log In</button>
         </form>  
-        <br/>
-        <Link to="/">Return to Home</Link>
       </div>
     );
   }

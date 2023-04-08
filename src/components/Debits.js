@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import React, { Component } from 'react';
 import AccountBalance from './AccountBalance';
 import './Debits.css'; // add this line
@@ -51,26 +51,19 @@ class Debits extends Component {
 
     return (
       <div className="debits">
-        <div className="debits-header">
-          <div className='debits-header-left'>
-            <Link to="/" className="return-button">
-              HOME
-            </Link>
-          </div>
-          <div className='debits-header-right'>
-              Debits
-          </div>
-        </div>
         <div className="debit-content">
         <div className='debit-content-left'>
+        <h1>
+        Debit History
+        </h1>
         <ul className="debit-list">{debitsView()}</ul>
         </div>
         <div className='debit-content-right'>
-
-        <form onSubmit={this.handleSubmit} className="debit-form">
-        <div className='account-balance'>
+        <h1 className='account-balance'>
         <AccountBalance accountBalance={this.props.accountBalance} />
-        </div>
+        </h1>
+        <form onSubmit={this.handleSubmit} className="debit-form">
+
           <div className="form-row"> 
             <label htmlFor="description" className="form-label">Description</label>
             <input type="text" name="description" id="description" value={this.state.description} onChange={this.handleChange} className="form-input" />

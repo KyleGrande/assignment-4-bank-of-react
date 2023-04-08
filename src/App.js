@@ -5,7 +5,7 @@ This is the top-level component of the app.
 It contains the top-level state.
 ==================================================*/
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import other components
 import Home from './components/Home';
@@ -76,7 +76,7 @@ class App extends Component {
   // Create Routes and React elements to be rendered using React components
   render() {  
     // Create React elements and pass input props to components
-    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} />)
+    const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} userName={this.state.currentUser.userName}  />)
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
     )
@@ -90,15 +90,27 @@ class App extends Component {
       <Debits debits={this.state.debitList} addDebit={this.addDebit} accountBalance={this.state.accountBalance} />
     )
     // Important: Include the "basename" in Router, which is needed for deploying the React app to GitHub Pages
+    //welcome username
     return (
       <Router basename="/assignment-4-bank-of-react">
-        <div>
-          <Route exact path="/" render={HomeComponent}/>
-          <Route exact path="/userProfile" render={UserProfileComponent}/>
-          <Route exact path="/login" render={LogInComponent}/>
-          <Route exact path="/credits" render={CreditsComponent}/>
-          <Route exact path="/debits" render={DebitsComponent}/>
-        </div>
+       <div className="App">
+    <header className="App-header">
+      <nav className="navbar">
+        <Link className="nav-link" to="/">Home</Link>
+        <Link className="nav-link" to="/userProfile">User Profile</Link>
+        <Link className="nav-link" to="/login">Log In</Link>
+        <Link className="nav-link" to="/credits">Credits</Link>
+        <Link className="nav-link" to="/debits">Debits</Link>
+      </nav>
+    </header>
+    <main className="App-main">
+      <Route exact path="/" render={HomeComponent} />
+      <Route exact path="/userProfile" render={UserProfileComponent} />
+      <Route exact path="/login" render={LogInComponent} />
+      <Route exact path="/credits" render={CreditsComponent} />
+      <Route exact path="/debits" render={DebitsComponent} />
+    </main>
+  </div>
       </Router>
     );
   }
