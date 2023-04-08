@@ -66,11 +66,11 @@ class Debits extends Component {
 
           <div className="form-row"> 
             <label htmlFor="description" className="form-label">Description</label>
-            <input type="text" name="description" id="description" value={this.state.description} onChange={this.handleChange} className="form-input" />
+            <input type="text" name="description" id="description" value={this.state.description} onChange={this.handleChange} className="form-input" required/>
           </div>
           <div className="form-row">
             <label htmlFor="amount" className="form-label">Amount</label>
-            <input type="number" name="amount" id="amount" value={this.state.amount} onChange={this.handleChange} className="form-input" />
+            <input type="number" name="amount" id="amount" value={this.state.amount} onChange={this.handleChange} className="form-input" required min="0.01" step="0.01" />
           </div>
           <button type="submit" className="form-button">Add Debit</button>
         </form>       
