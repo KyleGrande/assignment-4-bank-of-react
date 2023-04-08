@@ -1,177 +1,148 @@
 .debits {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #007acc;
-    padding-top: 0;
-    min-height: 100vh;
-  }
-  
-  .debits-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    background-color: #0565a4;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    font-size: 20px;
-    margin: 0;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: white;
-    flex-wrap: wrap;
-    
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #007acc;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
 
-  .return-button {
-    color: white;
-    margin-top: 16px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .return-button:hover {
-    text-decoration: underline;
-  }
+.debit-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+.debit-content-left h1 {
+text-align: left;
+color: white;
+}
 
-  .debits-header-right{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-  }
+.debit-content-right{
+  width: 400px;
+  padding-top: 0px;
+  border-radius: 4px;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-left: 8px;
+  margin-top: 16px;
+  top: calc(35% - (32px + 16px));
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
 
+.debit-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
 
-  
-  .debit-content {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    padding-top: 70px;
-  }
+.debit-item {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+}
 
-  .debit-content-right{
-    width: 400px;
-    padding-top: 0px;
-    border-radius: 4px;
-    position: -webkit-sticky;
-    position: sticky;
-    margin-left: 8px;
-    margin-top: 16px;
-    top: calc(35% - (32px + 16px));
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-  }
+.debit-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .debit-list {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0;
-  }
-  
-  .debit-item {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 16px;
-    margin-bottom: 16px;
-    width: 400px;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .debit-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .debit-amount {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: red;
-  }
-  
-  .debit-description {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-  
-  .debit-date {
-    font-size: 14px;
-    color: #777;
-  }
-  
+.debit-amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: red;
+}
+
+.debit-description {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.debit-date {
+  font-size: 14px;
+  color: #777;
+}
+
 .account-balance{
+  color: white;
+  border-radius: 4px;
+  font-size: 34px;
+  padding: 8px;
+  margin: 0;
+}
 
-    background-color: #0565a4;
-    color: white;
-    border-radius: 4px;
-    font-size: 34px;
-    padding: 8px;
-    margin: 0;
-  }
+.account-balance{
+  color: white;
+  border-radius: 4px;
+  font-size: 34px;
+  padding: 8px;
+  margin: 0;
+}
 .debit-form {
-    background-color: white;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    padding-top: 0px;
-    border-radius: 4px;
-    position: -webkit-sticky;
-    position: sticky;
-    margin-top: 16px;
-    top: calc(35% - (32px + 16px));
-    border-radius: 4px;
-  }
+  background-color: white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding-top: 0px;
+  border-radius: 4px;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 16px;
+  top: calc(35% - (32px + 16px));
+  border-radius: 4px;
+}
 
 
-  .form-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    margin: 16px;
-  }
-  
-  .form-label {
-    text-align: left;
-    background-color: #007acc;
-    padding: 4px;
-    color: white;
-    font-size: 20px;
-    border-radius: 4px;
-    margin-bottom: 8px;
-  }
-  
-  .form-input {
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #0565a4;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-button {
-    padding: 8px 8px;
-    font-size: 16px;
-    color: white;
-    background-color: #0565a4;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 16px;
-    cursor: pointer;
-  }
-  
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  margin: 16px;
+}
 
-  
+.form-label {
+  text-align: left;
+  background-color: #007acc;
+  padding: 4px;
+  color: white;
+  font-size: 20px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #0565a4;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-button {
+  padding: 8px 8px;
+  font-size: 16px;
+  color: white;
+  background-color: #0565a4;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+

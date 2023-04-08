@@ -16,3 +16,34 @@ code {
 input, button {
 	margin: 5px;
 }
+
+
+.App-header {
+  position: relative;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #0565a4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 1000;
+  color: white;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+.App-header {
+  padding-top: 40px; /* Adjust this value according to the height of your navbar */
+}

@@ -1,0 +1,24 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #007acc;
+    color: #007acc;
+    height: 100vh;
+  }
+  .content-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 600px;
+    border-radius: 4px;
+  }
+  .content-container h1 {
+    color: #007acc;
+  }
+
